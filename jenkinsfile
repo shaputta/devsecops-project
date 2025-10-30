@@ -14,9 +14,7 @@ pipeline {
         SONAR_TOKEN = credentials('sha-sonar-token')
 
     }
-    parameters {
-        string(name: 'TARGET_URL', defaultValue: 'localhost', description: 'App URL')
-     }
+   
      stages {
         stage('Cleanup') {
             steps {
@@ -151,7 +149,13 @@ pipeline {
         # Use Bash explicitly so "pipefail" works
         set -euxo pipefail
  
-        TARGET_URL="${params.TARGET_URL}"
+        def TARGET_URL=input(
+                id: 'userInput',
+                message: 'Enter the TARGET_URL for scan:',
+                parameters: [
+                    string(name: 'TARGET_URL', defaultValue: 'http://localhost:8005', description: 'Target to scan')
+                ]
+            )
  
         echo "🔄 Waiting for app to start..."
         for i in {1..10}; do
