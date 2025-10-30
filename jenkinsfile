@@ -125,7 +125,7 @@ pipeline {
                 }
             }
         }
-stage('Scan Docker Image with Trivy') {
+        stage('Scan Docker Image with Trivy') {
             steps {
                 // Scan and save report
                 sh '''
@@ -134,7 +134,6 @@ stage('Scan Docker Image with Trivy') {
                   cat trivy-reports/report.txt
                 '''
             }
-        }
         }
         stage('Archive Trivy Report') {
             steps {
