@@ -156,7 +156,7 @@ pipeline {
                     string(name: 'TARGET_URL', defaultValue: 'http://localhost:8005', description: 'Target to scan')
                 ]
             )
- 
+            echo "User entered: ${userInput}"
         echo "🔄 Waiting for app to start..."
         for i in {1..10}; do
             if curl -s --max-time 5 $TARGET_URL >/dev/null; then
