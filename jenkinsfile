@@ -147,7 +147,7 @@ pipeline {
         # Use Bash explicitly so "pipefail" works
         set -euxo pipefail
  
-        TARGET_URL="http://44.223.83.148/:8005"
+        TARGET_URL="http://44.223.83.148:8005"
  
         echo "🔄 Waiting for app to start..."
         for i in {1..10}; do
