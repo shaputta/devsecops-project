@@ -60,7 +60,6 @@
 # @app.route("/hardcoded_secret")
 # def secret():
 #     # ❌ Hardcoded secret / credential
-#     api_key = "ABCD1234XYZ9876SECRET"
 #     return jsonify({"api_key": api_key})
 
 # if __name__ == '__main__':
