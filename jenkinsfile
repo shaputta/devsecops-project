@@ -115,6 +115,7 @@ pipeline {
                 script {
                     sh 'docker rm  jenkins_app -f || true'
                     sh 'docker image rmi $DOCKERHUB_USER/$IMAGE_NAME:latest || true'
+                    sh 'docker rm python-new-app -f || true'
                 }
             }  
         }
