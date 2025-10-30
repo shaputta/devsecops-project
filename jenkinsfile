@@ -134,7 +134,7 @@ stage('Scan Docker Image with Trivy') {
                 '''
             }
         }
-
+        }
         stage('Archive Trivy Report') {
             steps {
                 archiveArtifacts artifacts: 'trivy-reports/report.txt', fingerprint: true
