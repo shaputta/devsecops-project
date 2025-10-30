@@ -122,7 +122,7 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t $DOCKERHUB_USER/$IMAGE_NAME:latest python_app'
-                    sh 'docker run -d -p 8005:5000 --name $IMAGE_NAME python-app:latest'
+                    sh 'docker run -d -p 8005:5000 --name python-app $DOCKERHUB_USER/$IMAGE_NAME:latest'
                 }
             }
         }
