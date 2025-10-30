@@ -21,7 +21,7 @@ RUN pip install --no-cache-dir --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
 # Copy app code
-COPY python_app/ /app/
+COPY . /app/
 
 # Create non-root user
 RUN useradd -r -u 10001 appuser && chown -R appuser:appuser /app
