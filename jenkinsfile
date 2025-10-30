@@ -142,7 +142,6 @@ pipeline {
             }
         }
         stage('OWASP ZAP Scan') {
-    agent { label 'ubuntu' }
     steps {
         sh '''#!/bin/bash
         # Use Bash explicitly so "pipefail" works
